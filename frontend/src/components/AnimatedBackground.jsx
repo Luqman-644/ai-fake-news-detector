@@ -1,0 +1,1 @@
+export default function AnimatedBackground(){return <div className='fixed inset-0 -z-10 bg-[radial-gradient(circle_at_20%_20%,rgba(34,211,238,.2),transparent_40%),radial-gradient(circle_at_80%_0%,rgba(59,130,246,.2),transparent_35%)]'/>}

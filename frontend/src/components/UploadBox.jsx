@@ -1,0 +1,1 @@
+export default function UploadBox({onChange}){return <label className='glass rounded-2xl p-8 border-dashed border-2 border-cyan-500/50 block text-center cursor-pointer'>Drop image or click to upload<input type='file' accept='image/*' className='hidden' onChange={onChange}/></label>}
