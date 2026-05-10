@@ -12,12 +12,15 @@ export function fallbackPredict(text, language) {
   const realScore = realList.reduce((acc, k) => acc + (t.includes(k.toLowerCase()) ? 1 : 0), 0);
 
   const isFake = fakeScore >= realScore;
-  const confidence = Math.min(95, 55 + Math.abs(fakeScore - realScore) * 10);
 
+  const isUrdu = language === 'urdu';
+  
   return {
-    prediction: isFake ? 'Fake News' : 'Real News',
-    confidence,
-    risk_level: isFake ? (confidence > 80 ? 'High' : 'Medium') : 'Low',
-    explanation: 'Fallback predictor used because AI API was unavailable. Result is based on keyword patterns.'
+    prediction: isFake 
+      ? (isUrdu ? 'جعلی خبر' : 'Fake News') 
+      : (isUrdu ? 'حقیقی خبر' : 'Real News'),
+    explanation: isUrdu 
+      ? 'یہ تجزیہ کلیدی الفاظ کی بنیاد پر کیا گیا ہے (اے آئی عارضی طور پر دستیاب نہیں ہے)۔' 
+      : 'Analysis based on keyword patterns (AI was temporarily unavailable).'
   };
 }

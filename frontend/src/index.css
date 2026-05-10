@@ -1,3 +1,75 @@
-@tailwind base;@tailwind components;@tailwind utilities;
-body{font-family:Inter,system-ui,sans-serif;background:linear-gradient(120deg,#020617,#0f172a,#000);color:#e2e8f0;min-height:100vh}
-.glass{background:rgba(255,255,255,.08);backdrop-filter:blur(16px);border:1px solid rgba(255,255,255,.12)}
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  body {
+    @apply bg-background text-ink-main min-h-screen selection:bg-primary/20 font-sans;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-serif text-ink-main font-normal tracking-normal;
+  }
+}
+
+@layer components {
+  /* Warm Card Component */
+  .card-warm {
+    @apply bg-surface rounded-soft shadow-soft border border-warm-gray transition-all duration-300;
+  }
+
+  .card-warm:hover {
+    @apply shadow-soft-lg;
+  }
+
+  /* Status Chips */
+  .status-chip {
+    @apply px-3 py-1 rounded-full text-xs font-bold font-sans uppercase tracking-widest border;
+  }
+  
+  .status-chip-success {
+    @apply border-primary text-primary bg-primary/5;
+  }
+  
+  .status-chip-danger {
+    @apply border-tertiary text-tertiary bg-tertiary/5;
+  }
+
+  /* Buttons */
+  .btn-primary {
+    @apply px-6 py-3 rounded-soft bg-primary text-white font-medium font-sans tracking-wide transition-all;
+  }
+  
+  .btn-primary:hover {
+    @apply bg-primary-hover shadow-soft-lg;
+  }
+
+  .btn-secondary {
+    @apply px-6 py-3 rounded-soft bg-transparent border border-warm-gray text-ink-main font-medium font-sans tracking-wide transition-all;
+  }
+
+  .btn-secondary:hover {
+    @apply bg-surface-alt border-primary text-primary;
+  }
+
+  /* Input Field */
+  .input-warm {
+    @apply w-full bg-surface border border-warm-gray rounded-soft py-4 px-4 text-lg outline-none transition-all font-sans text-ink-main placeholder:text-ink-muted;
+  }
+
+  .input-warm:focus {
+    @apply border-primary ring-1 ring-primary/20;
+  }
+}
+
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  @apply bg-background;
+}
+
+::-webkit-scrollbar-thumb {
+  @apply bg-warm-gray rounded-full hover:bg-ink-muted transition-colors;
+}

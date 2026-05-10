@@ -1,0 +1,67 @@
+# Dependencies
+node_modules/
+frontend/node_modules/
+backend/node_modules/
+
+# Environment files
+.env
+*.env
+backend/.env
+frontend/.env
+.env.local
+.env.*.local
+
+# Database files
+*.db
+*.sqlite
+*.sqlite3
+backend/analysis.db
+backend/database.db
+
+# Uploads / temporary files
+uploads/
+backend/uploads/*
+!backend/uploads/.gitkeep
+
+# OCR / trained data files
+*.traineddata
+backend/*.traineddata
+
+# Build outputs
+dist/
+build/
+frontend/dist/
+frontend/build/
+
+# Logs
+logs/
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# IDE files
+.vscode/
+.idea/
+
+# Cache
+.cache/
+.parcel-cache/
+.vite/
+eslintcache
+*.tsbuildinfo
+
+# Coverage
+coverage/
+
+# Local screenshots/files
+*.png
+*.jpg
+*.jpeg
+*.webp
+*.gif
